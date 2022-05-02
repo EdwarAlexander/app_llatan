@@ -1,0 +1,128 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0",
+    "title": "llatan",
+    "contact": {}
+  },
+  "host": "127.0.0.1:8000",
+  "basePath": "/",
+  "securityDefinitions": {},
+  "schemes": [
+    "http"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/clientes": {
+      "post": {
+        "summary": "creacliente",
+        "tags": [
+          "clientes"
+        ],
+        "operationId": "creacliente",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/creaclienterequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      },
+      "get": {
+        "summary": "listclientes",
+        "tags": [
+          "clientes"
+        ],
+        "operationId": "listclientes",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/clientes/kpi": {
+      "get": {
+        "summary": "listclienteskpi",
+        "tags": [
+          "clientes"
+        ],
+        "operationId": "listclienteskpi",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "creaclienterequest": {
+      "title": "creaclienterequest",
+      "example": {
+        "nombreCliente": "guiliana",
+        "apellidoCliente": "wiese",
+        "edadCliente": 24,
+        "fechaNacCliente": "2022-01-29T00:00:00.000Z"
+      },
+      "type": "object",
+      "properties": {
+        "nombreCliente": {
+          "type": "string"
+        },
+        "apellidoCliente": {
+          "type": "string"
+        },
+        "edadCliente": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "fechaNacCliente": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "nombreCliente",
+        "apellidoCliente",
+        "edadCliente",
+        "fechaNacCliente"
+      ]
+    }
+  },
+  "tags": [
+    {
+      "name": "clientes"
+    }
+  ]
+}
