@@ -6,7 +6,7 @@ import clienteRouter from '../routes/cliente.route';
 import documentacion from "../docs/swagger.json";
 
 
-const port_server = Number(process.env.PORT_SERVER);
+const port_server = Number(process.env.PORT);
 
 export default class Server {
     private readonly app: Express;
