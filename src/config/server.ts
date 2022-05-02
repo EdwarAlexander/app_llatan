@@ -29,7 +29,7 @@ export default class Server {
 
         //documentacion de la api
         if (process.env.NODE_ENV === "production") {
-            documentacion.host = "";
+            documentacion.host = "app-llatan.herokuapp.com";
             documentacion.schemes = ["https"];
         } else {
             documentacion.host = `127.0.0.1:${this.port}`;
